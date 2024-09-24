@@ -76,22 +76,22 @@ public class UsuarioRepositorio {
                 case 4:
                     imprimir.println("Ingrese el nuevo Tipo de NIF");
                     String nuevoTipoNif = ingresaData.nextLine();
-                    listaUsuarios[indiceUsuarioAEditar].setApellidoUsuario(nuevoTipoNif);
+                    listaUsuarios[indiceUsuarioAEditar].setTipoNifUsuario(nuevoTipoNif);
                     break;
                 case 5:
                     imprimir.println("Ingrese el nuevo numero de NIF");
                     String nuevoNumNif = ingresaData.nextLine();
-                    listaUsuarios[indiceUsuarioAEditar].setApellidoUsuario(nuevoNumNif);
+                    listaUsuarios[indiceUsuarioAEditar].setNumeriNifUsuario(nuevoNumNif);
                     break;
                 case 6:
                     imprimir.println("Ingrese el nuevo correo");
                     String nuevoCorreo = ingresaData.nextLine();
-                    listaUsuarios[indiceUsuarioAEditar].setApellidoUsuario(nuevoCorreo);
+                    listaUsuarios[indiceUsuarioAEditar].setCorreoUsuario(nuevoCorreo);
                     break;
                 case 7:
                     imprimir.println("Ingrese el nuevo telefono");
                     String nuevoTelefono = ingresaData.nextLine();
-                    listaUsuarios[indiceUsuarioAEditar].setApellidoUsuario(nuevoTelefono);
+                    listaUsuarios[indiceUsuarioAEditar].setTelefonoUsuario(nuevoTelefono);
                     break;
                 case 8:
                     imprimir.println("Ingrese la nueva contraseña");

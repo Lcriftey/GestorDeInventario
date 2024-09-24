@@ -12,19 +12,6 @@ public class Usuario {
     private String correoUsuario;
     private String contrasenaUsuario;
 
-    public Usuario(){
-        edadUsuario = 0;
-        nombreUsuario = "";
-        apellidoUsuario = "";
-        tipoNifUsuario = "";
-        numeroNifUsuario = "";
-        direccionUsuario = "";
-        telefonoUsuario = "";
-        estadoUsuario = false;
-        correoUsuario = "";
-        contrasenaUsuario = "";
-    }
-
     public Usuario(String nombre, String apellido, int edad,
                    String tipoNif, String numeroNif, String correo, String direccion,
                    String telefono, String contrasena, boolean estado){
@@ -76,7 +63,7 @@ public class Usuario {
         return numeroNifUsuario;
     }
 
-    public void setNumeriNofUsuario(String numeriNifUsuario) {
+    public void setNumeriNifUsuario(String numeriNifUsuario) {
         this.numeroNifUsuario = numeriNifUsuario;
     }
 
