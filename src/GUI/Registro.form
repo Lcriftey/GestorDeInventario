@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUI.Registro">
+  <grid id="27dc6" binding="panelRegistro" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="47" y="39" width="520" height="526"/>
+    </constraints>
+    <properties>
+      <foreground color="-13553298"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="c07f8" binding="PanelRegistro" layout-manager="GridLayoutManager" row-count="11" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="20" left="20" bottom="20" right="20"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9027920"/>
+          <foreground color="-9352536"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="cbe84" class="javax.swing.JLabel" binding="lbContraseñaUsuarioRegistrar">
+            <constraints>
+              <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="12" style="0"/>
+              <foreground color="-1841689"/>
+              <text value="Contraseña"/>
+            </properties>
+          </component>
+          <component id="38bc5" class="javax.swing.JFormattedTextField" binding="tfCorreoUsuarioRegistrar">
+            <constraints>
+              <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3439621"/>
+              <font name="Comic Sans MS" size="12" style="0"/>
+            </properties>
+          </component>
+          <component id="f501d" class="javax.swing.JLabel" binding="lbCorreoUsuarioRegistrar">
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="12" style="0"/>
+              <foreground color="-1841689"/>
+              <text value="Correo:"/>
+            </properties>
+          </component>
+          <component id="27d9" class="javax.swing.JPasswordField" binding="pfContraseñaUsuarioRegistrar">
+            <constraints>
+              <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3439621"/>
+              <font name="Comic Sans MS" size="12" style="0"/>
+            </properties>
+          </component>
+          <component id="d8524" class="javax.swing.JButton" binding="btRegistrarUsuario">
+            <constraints>
+              <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="12" style="0"/>
+              <text value="Registrarse"/>
+            </properties>
+          </component>
+          <component id="52b14" class="javax.swing.JFormattedTextField" binding="tfRegistrarTelefono">
+            <constraints>
+              <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3439621"/>
+              <font name="Comic Sans MS" size="12" style="0"/>
+            </properties>
+          </component>
+          <component id="b9985" class="javax.swing.JLabel" binding="lbRegistrarTelefono">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="12" style="0"/>
+              <foreground color="-1841689"/>
+              <text value="Telefono:"/>
+            </properties>
+          </component>
+          <component id="2dbec" class="javax.swing.JFormattedTextField" binding="tfRegistrarDireccion">
+            <constraints>
+              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3439621"/>
+              <font name="Comic Sans MS" size="12" style="0"/>
+            </properties>
+          </component>
+          <component id="45be9" class="javax.swing.JLabel" binding="lbRegistrarDireccion">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="12" style="0"/>
+              <foreground color="-1841689"/>
+              <text value="Direccion:"/>
+            </properties>
+          </component>
+          <component id="61abc" class="javax.swing.JFormattedTextField" binding="tfRegistrarNif">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3439621"/>
+              <font name="Comic Sans MS" size="12" style="0"/>
+            </properties>
+          </component>
+          <component id="a82e6" class="javax.swing.JLabel" binding="lbRegistrarNIf">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="12" style="0"/>
+              <foreground color="-1841689"/>
+              <text value="Numero de NIF:"/>
+            </properties>
+          </component>
+          <component id="fca86" class="javax.swing.JFormattedTextField" binding="tfRegistrarTipoNif">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3439621"/>
+              <font name="Comic Sans MS" size="12" style="0"/>
+            </properties>
+          </component>
+          <component id="1f220" class="javax.swing.JLabel" binding="lbRegistrarTipoNIf">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="12" style="0"/>
+              <foreground color="-1841689"/>
+              <text value="Tipo De NIf:"/>
+            </properties>
+          </component>
+          <component id="6d6ab" class="javax.swing.JFormattedTextField" binding="tfRegistrarEdad">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3439621"/>
+              <font name="Comic Sans MS" size="12" style="0"/>
+            </properties>
+          </component>
+          <component id="d0fc3" class="javax.swing.JLabel" binding="lbRegistraredad">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="12" style="0"/>
+              <foreground color="-1841689"/>
+              <text value="Edad:"/>
+            </properties>
+          </component>
+          <component id="c3472" class="javax.swing.JFormattedTextField" binding="tfRegistrarApellido">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3439621"/>
+              <font name="Comic Sans MS" size="12" style="0"/>
+            </properties>
+          </component>
+          <component id="78954" class="javax.swing.JLabel" binding="lbRegistrarApellido">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="12" style="0"/>
+              <foreground color="-1841689"/>
+              <text value="Apellidos:"/>
+            </properties>
+          </component>
+          <component id="a144c" class="javax.swing.JFormattedTextField" binding="tfRegistrarNombre">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3439621"/>
+              <font name="Comic Sans MS" size="12" style="0"/>
+            </properties>
+          </component>
+          <component id="607dc" class="javax.swing.JLabel" binding="lbRegistrarNombre">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="12" style="0"/>
+              <foreground color="-1841689"/>
+              <text value="Nombres"/>
+            </properties>
+          </component>
+          <component id="d2c94" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="26" style="0"/>
+              <foreground color="-1446418"/>
+              <icon value="Imagees/add.png"/>
+              <text value="Registrese"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
