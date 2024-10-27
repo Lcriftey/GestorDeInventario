@@ -13,20 +13,22 @@ public class InterfazProducto extends JDialog{
     private JButton cancelarButton;
 
 
-    public InterfazProducto(JFrame parentInterfazProducto) {
+    public InterfazProducto(Principal parentInterfazProducto) {
         super(parentInterfazProducto);
         setTitle("Producto");
         setContentPane(PanelBotones);
         setMinimumSize(new Dimension(600, 490));
         setModal(true);
-        setLocationRelativeTo(PanelBotones);
-        /*setDefaultCloseOperation(DISPOSE_ON_CLOSE);*/
+        setLocationRelativeTo(parentInterfazProducto);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        bttCrear.addActionListener(new ActionListener( {
+
+        bttCrear.addActionListener(new ActionListener() {
             @Override
-              public void actionPerformed(ActionEvent e){
-            CrearProductos abrirVentana = new CrearProductos(Login.this);
-        }
+            public void actionPerformed(ActionEvent e) {
+                CrearProductos abrirVentana = new CrearProductos(InterfazProducto.this);
+            }
         });
+        setVisible(true);
     }
 }

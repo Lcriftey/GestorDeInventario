@@ -1,16 +1,16 @@
 package LogicaProyecto;
 
 public class Usuario {
-    private int edadUsuario;
-    private String nombreUsuario;
-    private String apellidoUsuario;
-    private String tipoNifUsuario;
-    private String numeroNifUsuario;
-    private String direccionUsuario;
-    private String telefonoUsuario;
-    private boolean estadoUsuario;
-    private String correoUsuario;
-    private String contrasenaUsuario;
+    private int edadUsuario = 5;
+    private String nombreUsuario = "s";
+    private String apellidoUsuario = "s";
+    private String tipoNifUsuario = "s";
+    private String numeroNifUsuario = "s";
+    private String direccionUsuario= "s";
+    private String telefonoUsuario = "s";
+    private boolean estadoUsuario = true;
+    private String correoUsuario = "s";
+    private String contrasenaUsuario = "s";
 
     public Usuario(String nombre, String apellido, int edad,
                    String tipoNif, String numeroNif, String correo, String direccion,
