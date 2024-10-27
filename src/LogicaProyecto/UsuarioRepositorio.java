@@ -8,10 +8,6 @@ public class UsuarioRepositorio {
     Scanner ingresaData = new Scanner(System.in);
     PrintStream imprimir = new PrintStream(System.out);
 
-    public Usuario[] accederAlArreglo(){
-        return listaUsuarios;
-    }
-
 
 
     public void CrearUsuario(String nombre, String apellido, int edad, String tipoNif, String numeroNif,
@@ -106,6 +102,10 @@ public class UsuarioRepositorio {
 
 
         }
+    }
+
+    public Usuario[] accederAlArreglo(){
+        return listaUsuarios;
     }
 
     public void ObtenerListaDeUsuarios(){
