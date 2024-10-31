@@ -44,7 +44,7 @@ public class Login extends JDialog{
 
                 UsuarioServicio usuarioServicio = new UsuarioServicio();
                 seEncuentraRegistrado = usuarioServicio.validarUsuario(correoSuministrado, contraseñaSuministrada);
-                if(seEncuentraRegistrado == true){
+                if(seEncuentraRegistrado){
                     Principal ventanaPrincipal = new Principal((JFrame) parent);
                     dispose();
 

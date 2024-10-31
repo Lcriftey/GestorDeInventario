@@ -39,6 +39,7 @@ public class Principal extends JDialog{
             @Override
             public void actionPerformed(ActionEvent e) {
                 InterfazProducto abrirVentana = new InterfazProducto(Principal.this);
+                dispose();
             }
         });
         setVisible(true);

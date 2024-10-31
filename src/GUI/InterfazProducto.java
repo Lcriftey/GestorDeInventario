@@ -10,7 +10,7 @@ public class InterfazProducto extends JDialog{
     private JButton bttCrear;
     private JPanel PanelTitulo;
     private JPanel PanelBotones;
-    private JButton cancelarButton;
+    private JButton bttvolverVentanaPrincipal;
 
 
     public InterfazProducto(Principal parentInterfazProducto) {
@@ -27,6 +27,7 @@ public class InterfazProducto extends JDialog{
             @Override
             public void actionPerformed(ActionEvent e) {
                 CrearProductos abrirVentana = new CrearProductos(InterfazProducto.this);
+                dispose();
             }
         });
         setVisible(true);
