@@ -24,7 +24,9 @@ public class Login extends JDialog{
         setModal(true);
         setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
+        UsuarioRepositorio usuario = new UsuarioRepositorio();
+        usuario.UsuarioPorDefecto("s", "s",5,"s","s","s","s",
+                                    "s", "s");
 
         btCrearUsuario.addActionListener(new ActionListener() {
             @Override
@@ -42,7 +44,7 @@ public class Login extends JDialog{
 
                 UsuarioServicio usuarioServicio = new UsuarioServicio();
                 seEncuentraRegistrado = usuarioServicio.validarUsuario(correoSuministrado, contraseñaSuministrada);
-                if(seEncuentraRegistrado == true){
+                if(seEncuentraRegistrado){
                     Principal ventanaPrincipal = new Principal((JFrame) parent);
                     dispose();
 

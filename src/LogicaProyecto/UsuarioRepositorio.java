@@ -5,12 +5,13 @@ import java.io.PrintStream;
 
 public class UsuarioRepositorio {
     private static Usuario[] listaUsuarios = new Usuario[10];
+    public void UsuarioPorDefecto(String nombre, String apellido, int edad, String tipoNif, String numeroNif,
+                                  String correo, String direccion, String telefono, String contrasena){
+        listaUsuarios[0] = new Usuario(nombre, apellido, edad, tipoNif, numeroNif, correo,
+                direccion, telefono, contrasena, true);
+    }
     Scanner ingresaData = new Scanner(System.in);
     PrintStream imprimir = new PrintStream(System.out);
-
-    public Usuario[] accederAlArreglo(){
-        return listaUsuarios;
-    }
 
 
 
@@ -106,6 +107,10 @@ public class UsuarioRepositorio {
 
 
         }
+    }
+
+    public Usuario[] accederAlArreglo(){
+        return listaUsuarios;
     }
 
     public void ObtenerListaDeUsuarios(){

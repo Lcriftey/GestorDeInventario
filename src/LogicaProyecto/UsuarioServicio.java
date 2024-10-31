@@ -12,6 +12,7 @@ public class UsuarioServicio {
         System.out.println("Ingrese su contraseña para ingresar:");
 
         Usuario[] arreglo = repositorio.accederAlArreglo();
+
         for(Usuario informacionUsuario : arreglo){
             if(informacionUsuario.getCorreoUsuario().equals(correoIngresarUsuario)
                && informacionUsuario.getContrasenaUsuario().equals(contrasenaIngresarUsuario)){

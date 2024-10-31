@@ -9,6 +9,7 @@ public class Principal extends JDialog{
     private JPanel panel1;
     private JLabel lbBienvenida;
     private JButton btCerrarSesion;
+    private JButton btProductos;
 
     public Principal(JFrame parentPrinicipal) {
         super(parentPrinicipal);
@@ -19,7 +20,7 @@ public class Principal extends JDialog{
         setLocationRelativeTo(parentPrinicipal);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        setVisible(true);
+
         btCerrarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -31,6 +32,14 @@ public class Principal extends JDialog{
                 dispose();
                 new Login((JFrame) parentPrinicipal);
 
+            }
+        });
+
+        btProductos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                InterfazProducto abrirVentana = new InterfazProducto(Principal.this);
+                dispose();
             }
         });
         setVisible(true);
