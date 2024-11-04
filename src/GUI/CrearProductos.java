@@ -1,6 +1,7 @@
 package GUI;
 
 import LogicaProyecto.BDProductos;
+import LogicaProyecto.Inventario;
 import LogicaProyecto.Producto;
 import LogicaProyecto.ProductoRepositorio;
 
@@ -24,6 +25,7 @@ public class CrearProductos extends JDialog{
     private JTextField txtFechaExpiracionProducto;
     private JTextField txtProveedorProducto;
     private JPanel JPanelInventario;
+    private JButton bttCloseWindow;
     private JTable tbltablaDeInventario;
     private DefaultTableModel modeloDeTabla;
 
@@ -65,14 +67,95 @@ public class CrearProductos extends JDialog{
         JScrollPane scrollPane = new JScrollPane(tbltablaDeInventario);
         JPanelInventario.add(scrollPane, BorderLayout.CENTER);
         //add(scrollPane);
-        setVisible(true);
+
         bttGuardarProducto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Producto p = new Producto("200","Waffer", "No Perecedero",4,100452,"12082029","Colombina");
+                Producto p = (ExtraerInformacionDeCampos(txtIDProducto,txtNombrePoducto,
+                        cmbTipoProducto, txtCantidadProducto, txtPrecioProducto,
+                        txtFechaExpiracionProducto, txtProveedorProducto));
                 BDProductos bd = new BDProductos();
-                bd.RegistrarProducto(p);
+
+                boolean registrado = bd.RegistrarProducto(p);
+
+                if (registrado) {
+                    JOptionPane.showMessageDialog(null, "Producto registrado con éxito.");
+                    recargarDatosDeTabla();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al registrar el producto.");
+                }
             }
         });
+        bttCloseWindow.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        bttCerrarVentana.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Inventario ff = new Inventario("inventario.txt");
+                ff.openTextFile("C:\\Users\\juanc\\Documents\\Parcial-ProgramacionlV\\GestionInventario\\out\\production\\GestionInventario\\Archivos\\inventario.txt");  // Asegúrate de colocar la ruta correcta
+            }
+
+        });
+        setVisible(true);
+    }
+
+
+
+    public Producto ExtraerInformacionDeCampos(JTextField txtIDProducto,
+                                             JTextField txtNombreProducto,
+                                             JComboBox cmbTipoProducto,
+                                             JTextField txtCantidadProducto,
+                                             JTextField txtPrecioProducto,
+                                             JTextField txtFechaExpiracionProducto,
+                                             JTextField txtProveedorProducto){
+
+        String id = txtIDProducto.getText();
+        String nombre = txtNombreProducto.getText();
+        String categoria = (String) cmbTipoProducto.getSelectedItem();
+        int cantidad = Integer.parseInt(txtCantidadProducto.getText());
+        float precio = Float.parseFloat(txtPrecioProducto.getText());
+        String expiracion = txtFechaExpiracionProducto.getText();
+        String proveedor = txtProveedorProducto.getText();
+
+
+        return new Producto(id, nombre, categoria, cantidad, precio, expiracion, proveedor);
+    }
+
+    public void recargarDatosDeTabla() {
+        // Limpia todas las filas del modelo actual
+        modeloDeTabla.setRowCount(0);
+
+        // Vuelve a cargar los productos desde el archivo
+        ProductoRepositorio repositorio = new ProductoRepositorio();
+        repositorio.CargarProductoALaLista();  // Cargar productos en la lista desde el archivo
+        LinkedList<Producto> productos = repositorio.getListaDeProductos();
+
+        // Agrega cada producto como una nueva fila en el modelo
+        for (Producto producto : productos) {
+            Object[] fila = {
+                    producto.getIdProducto(),
+                    producto.getNombreProducto(),
+                    producto.getCategoriaProducto(),
+                    producto.getCantidadProducto(),
+                    producto.getPrecioProducto(),
+                    producto.getExpiracionProducto(),
+                    producto.getNombreProveedor()
+            };
+            modeloDeTabla.addRow(fila);
+        }
+
+        // Refresca la tabla
+        tbltablaDeInventario.revalidate();
+        tbltablaDeInventario.repaint();
+    }
+
+    public static void main (String [] args){
+        CrearProductos tabla;
+        tabla = new CrearProductos(null);
     }
 }
+

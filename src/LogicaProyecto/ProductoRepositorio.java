@@ -28,6 +28,7 @@ public class ProductoRepositorio {
         listaDeProductos = bdproductos.ObtenerProductosDelArchivo();
     }
 
+    //Retirar este metodo del codigo final
     public void ImprimirLista(){
         for(int i=0; i<listaDeProductos.size(); i++){
             System.out.println(listaDeProductos.get(i).getIdProducto()+ " " + listaDeProductos.get(i).getNombreProducto());

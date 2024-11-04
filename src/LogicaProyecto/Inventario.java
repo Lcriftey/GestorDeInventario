@@ -1,12 +1,13 @@
 package LogicaProyecto;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.LinkedList;
 
-public class Inventario {
+public class Inventario extends Component {
     private String archivoDeInventario;
 
     public Inventario(String archivoDeInventario) {
@@ -61,6 +62,27 @@ public class Inventario {
             error.printStackTrace();
         }
         return false;
+    }
+
+    public void openTextFile(String filePath) {
+        try {
+            File file = new File(filePath);
+            if (!file.exists()) {
+                JOptionPane.showMessageDialog(this, "Archivo no encontrado: " + filePath, "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Abre el archivo usando Desktop
+            if (Desktop.isDesktopSupported()) {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.open(file);
+            } else {
+                JOptionPane.showMessageDialog(this, "Función no soportada en este sistema", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al abrir el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
 

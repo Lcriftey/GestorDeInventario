@@ -13,10 +13,10 @@ public class Principal extends JDialog{
 
     public Principal(JFrame parentPrinicipal) {
         super(parentPrinicipal);
-        setTitle("LogicaProyecto.Login");
+        setTitle("Ventana Principal");
         setContentPane(panel1);
         setMinimumSize(new Dimension(450, 478));
-
+        setModal(true);
         setLocationRelativeTo(parentPrinicipal);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -28,7 +28,7 @@ public class Principal extends JDialog{
                         "Se cerrará esta ventana.",
                         "Éxito",
                         JOptionPane.INFORMATION_MESSAGE);
-                setModal(false);
+
                 dispose();
                 new Login((JFrame) parentPrinicipal);
 
