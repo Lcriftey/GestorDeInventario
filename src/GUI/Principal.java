@@ -5,19 +5,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Principal extends JDialog{
+public class Principal extends JFrame{
     private JPanel panel1;
     private JLabel lbBienvenida;
     private JButton btCerrarSesion;
     private JButton btProductos;
+    private JButton bttAbrirVentanaProveedores;
 
-    public Principal(JFrame parentPrinicipal) {
-        super(parentPrinicipal);
+    public Principal() {
         setTitle("Ventana Principal");
         setContentPane(panel1);
         setMinimumSize(new Dimension(450, 478));
-        setModal(true);
-        setLocationRelativeTo(parentPrinicipal);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 
@@ -29,8 +27,10 @@ public class Principal extends JDialog{
                         "Éxito",
                         JOptionPane.INFORMATION_MESSAGE);
 
+                Login nuevaVentana = new Login();
+                nuevaVentana.setLocationRelativeTo(null);
+                nuevaVentana.setVisible(true);
                 dispose();
-                new Login((JFrame) parentPrinicipal);
 
             }
         });
@@ -38,7 +38,8 @@ public class Principal extends JDialog{
         btProductos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                InterfazProducto abrirVentana = new InterfazProducto(Principal.this);
+                InterfazProducto nuevaVentana = new InterfazProducto();
+                nuevaVentana.setVisible(true);
                 dispose();
             }
         });

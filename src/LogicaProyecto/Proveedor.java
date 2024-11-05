@@ -1,7 +1,7 @@
 package LogicaProyecto;
 
 public class Proveedor {
-    private int idProveedor;
+    private String idProveedor;
     private String nombreProveedor;
     private String direccionProveedor;
     private String telefonoProveedor;
@@ -10,11 +10,11 @@ public class Proveedor {
 
     }
 
-    public int getIdProveedor() {
+    public String getIdProveedor() {
         return idProveedor;
     }
 
-    public void setIdProveedor(int idProveedor) {
+    public void setIdProveedor(String idProveedor) {
         this.idProveedor = idProveedor;
     }
 

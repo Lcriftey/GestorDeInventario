@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
-public class CrearProductos extends JDialog{
+public class CrearProductos extends JFrame{
     private JPanel panelCrearProductos;
     private JButton bttGuardarProducto;
     private JButton bttCerrarVentana;
@@ -30,11 +30,9 @@ public class CrearProductos extends JDialog{
     private DefaultTableModel modeloDeTabla;
 
     public CrearProductos(InterfazProducto parentCrearProductos) {
-        super(parentCrearProductos);
         setTitle("Crear Productos");
         setContentPane(panelCrearProductos);
         setMinimumSize(new Dimension(600, 490));
-        setModal(true);
         setLocationRelativeTo(panelCrearProductos);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -59,17 +57,12 @@ public class CrearProductos extends JDialog{
                 }
             }
         });
-        bttCloseWindow.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-            }
-        });
         bttCerrarVentana.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Inventario ff = new Inventario("inventario.txt");
-                ff.openTextFile("C:\\Users\\juanc\\Documents\\Parcial-ProgramacionlV\\GestionInventario\\out\\production\\GestionInventario\\Archivos\\inventario.txt");  // Asegúrate de colocar la ruta correcta
+                dispose();
+                InterfazProducto abrirventana = new InterfazProducto();
+                abrirventana.setVisible(true);
             }
 
         });

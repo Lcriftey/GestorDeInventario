@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import LogicaProyecto.*;
 
-public class Login extends JDialog{
+public class Login extends JFrame{
     private JPanel panel1;
     private JLabel lbPresentacion;
     private JPasswordField pfContraseñaUsuario;
@@ -16,13 +16,10 @@ public class Login extends JDialog{
     private JButton btCrearUsuario;
     private JButton btVerificarUsuario;
 
-    public Login(JFrame parent){
-        super(parent);
+    public Login(){
         setTitle("LogicaProyecto.Login");
         setContentPane(panel1);
         setMinimumSize(new Dimension(470, 478));
-        setModal(true);
-        setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         UsuarioRepositorio usuario = new UsuarioRepositorio();
         usuario.UsuarioPorDefecto("s", "s",5,"s","s","s","s",
@@ -45,7 +42,9 @@ public class Login extends JDialog{
                 UsuarioServicio usuarioServicio = new UsuarioServicio();
                 seEncuentraRegistrado = usuarioServicio.validarUsuario(correoSuministrado, contraseñaSuministrada);
                 if(seEncuentraRegistrado){
-                    Principal ventanaPrincipal = new Principal((JFrame) parent);
+                    Principal nuevaVentana = new Principal();
+                    nuevaVentana.setLocationRelativeTo(null);
+                    nuevaVentana.setVisible(true);
                     dispose();
 
                 }
