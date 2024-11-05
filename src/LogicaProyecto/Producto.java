@@ -8,7 +8,6 @@ public class Producto {
     private float precioProducto;
     private String expiracionProducto;
     private String nombreProveedor;
-    /*private Proveedor proveedorDelProducto;  Aqui la idea es que haya una dependencia entre los productos y los proveedores*/
 
     public Producto(String id, String nombre, String categoría, int cantidad, float precio,
                     String fechaExpiracion, String Proveedor){

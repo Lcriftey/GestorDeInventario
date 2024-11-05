@@ -162,7 +162,5 @@ public class UsuarioRepositorio {
 
         Usuario correoABuscar = ObtenerCorreoUsuario(correoDeseado);
     }
-
-
 }
 

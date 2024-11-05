@@ -114,7 +114,6 @@ public class BorrarProducto extends JFrame{
             String expiracionProducto = (String) modeloDeTabla.getValueAt(row, 5);
             String proveedorProducto = (String) modeloDeTabla.getValueAt(row, 6);
 
-            // Crear un nuevo objeto Producto con los datos de la fila
             Producto productoActualizado = new Producto(idProducto, nombreProducto, categoriaProducto,
                     cantidadProducto, precioProducto, expiracionProducto, proveedorProducto);
 
@@ -124,7 +123,6 @@ public class BorrarProducto extends JFrame{
     }
 
     public void recargarDatosDeTabla() {
-        // Limpia todas las filas del modelo actual
         modeloDeTabla.setRowCount(0);
 
         // Vuelve a cargar los productos desde el archivo

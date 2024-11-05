@@ -50,6 +50,7 @@ public class Principal extends JFrame{
                 InterfazProveedores abrirVentana = new InterfazProveedores();
                 abrirVentana.setLocationRelativeTo(null);
                 abrirVentana.setVisible(true);
+                dispose();
             }
         });setVisible(true);
     }

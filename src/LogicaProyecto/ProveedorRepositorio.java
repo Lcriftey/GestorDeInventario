@@ -28,13 +28,6 @@ public class ProveedorRepositorio {
         listaDeProveedores = bdProveedores.obtenerProveedoresDelArchivo();
     }
 
-    // Retirar este método del código final
-    public void imprimirLista() {
-        for (int i = 0; i < listaDeProveedores.size(); i++) {
-            System.out.println(listaDeProveedores.get(i).getIdProveedor() + " " + listaDeProveedores.get(i).getNombreProveedor());
-        }
-    }
-
     public LinkedList<Proveedor> getListaDeProveedores() {
         return listaDeProveedores;
     }

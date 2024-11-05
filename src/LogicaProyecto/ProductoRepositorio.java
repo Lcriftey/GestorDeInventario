@@ -23,18 +23,11 @@ public class ProductoRepositorio {
         return listaDeProductos.get(indiceDelProducto);
     }
 
-    /*Aqui debe ir el metodo de cargar productos en la lista*/
     public void CargarProductoALaLista(){
         BDProductos bdproductos = new BDProductos();
         listaDeProductos = bdproductos.ObtenerProductosDelArchivo();
     }
 
-    //Retirar este metodo del codigo final
-    public void ImprimirLista(){
-        for(int i=0; i<listaDeProductos.size(); i++){
-            System.out.println(listaDeProductos.get(i).getIdProducto()+ " " + listaDeProductos.get(i).getNombreProducto());
-        }
-    }
 
     public LinkedList<Producto> getListaDeProductos() {
         return listaDeProductos;

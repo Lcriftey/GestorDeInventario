@@ -64,28 +64,6 @@ public class Inventario extends Component {
         return false;
     }
 
-    //Metodo que abre el archivo en su dirreccion (retirar si se logra hacer que los datos se editen en la tabla)
-    public void openTextFile(String filePath) {
-        try {
-            File file = new File(filePath);
-            if (!file.exists()) {
-                JOptionPane.showMessageDialog(this, "Archivo no encontrado: " + filePath, "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            // Abre el archivo usando Desktop
-            if (Desktop.isDesktopSupported()) {
-                Desktop desktop = Desktop.getDesktop();
-                desktop.open(file);
-            } else {
-                JOptionPane.showMessageDialog(this, "Función no soportada en este sistema", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error al abrir el archivo", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
     public boolean borrarContenido() {
         File archivoInventario = obtenerArchivoDeInventario();
         try {
