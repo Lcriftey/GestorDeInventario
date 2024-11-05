@@ -50,7 +50,7 @@ public class ListadoDeProveedores extends Component {
     public boolean registrarProveedor(String linea) {
         File archivoProveedores = obtenerArchivoDeProveedores();
         try {
-            if (archivoProveedores != null && archivoProveedores.exists()) {
+            if (/*archivoProveedores != null && */archivoProveedores.exists()) {
                 FileWriter fw = new FileWriter(archivoProveedores, true);
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter pw = new PrintWriter(bw);

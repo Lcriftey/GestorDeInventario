@@ -62,6 +62,7 @@ public class CrearProductos extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 InterfazProducto abrirventana = new InterfazProducto();
+                abrirventana.setLocationRelativeTo(null);
                 abrirventana.setVisible(true);
             }
 

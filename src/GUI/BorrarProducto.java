@@ -12,12 +12,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
-public class BorrarProducto extends JDialog{
+public class BorrarProducto extends JFrame{
     private JPanel panelBorrarProductos;
     private JTextField txtIDProductoAEliminar;
     private JButton bttEliminarProducto;
     private JButton bttSalir;
-    private JButton bttCancelar;
     private JLabel lbIDProductoAEliminar;
     private JPanel panelTablaInventario;
     private JPanel panelSolicitudDeID;
@@ -25,12 +24,10 @@ public class BorrarProducto extends JDialog{
     private JTable tbltablaDeInventario;
     private DefaultTableModel modeloDeTabla;
 
-    public BorrarProducto(InterfazProducto parentBorrarProductos) {
-        super(parentBorrarProductos);
+    public BorrarProducto() {
         setTitle("Crear Productos");
         setContentPane(panelBorrarProductos);
         setMinimumSize(new Dimension(600, 490));
-        setModal(true);
         setLocationRelativeTo(panelBorrarProductos);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -152,11 +149,5 @@ public class BorrarProducto extends JDialog{
         // Refresca la tabla
         tbltablaDeInventario.revalidate();
         tbltablaDeInventario.repaint();
-    }
-
-
-    public static void main (String [] args){
-        BorrarProducto tabla;
-        tabla = new BorrarProducto(null);
     }
 }

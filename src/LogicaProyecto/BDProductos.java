@@ -42,7 +42,4 @@ public class BDProductos {
                 + producto.getExpiracionProducto() + ";"
                 + producto.getNombreProveedor());
     }
-
-    //Solucion de ChatGptp
-
 }

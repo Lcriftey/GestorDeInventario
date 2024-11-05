@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
-public class ConsultarProductos extends JDialog{
+public class ConsultarProductos extends JFrame{
     private JPanel panelConsultarProductos;
     private JButton salirButton;
     private JPanel panelBotones;
@@ -19,12 +19,10 @@ public class ConsultarProductos extends JDialog{
     private DefaultTableModel modeloDeTabla;
 
 
-    public ConsultarProductos(InterfazProducto parentConsultarProductos) {
-        super(parentConsultarProductos);
+    public ConsultarProductos() {
         setTitle("Editar Productos");
         setContentPane(panelConsultarProductos);
         setMinimumSize(new Dimension(600, 490));
-        setModal(true);
         setLocationRelativeTo(panelConsultarProductos);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -69,10 +67,5 @@ public class ConsultarProductos extends JDialog{
         tbltablaDeInventario = new JTable(modeloDeTabla);
         JScrollPane scrollPane = new JScrollPane(tbltablaDeInventario);
         panelTablaInventario.add(scrollPane, BorderLayout.CENTER);
-    }
-
-    public static void main (String [] args){
-        ConsultarProductos tabla;
-        tabla = new ConsultarProductos(null);
     }
 }

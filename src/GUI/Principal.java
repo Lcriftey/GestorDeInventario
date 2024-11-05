@@ -15,7 +15,7 @@ public class Principal extends JFrame{
     public Principal() {
         setTitle("Ventana Principal");
         setContentPane(panel1);
-        setMinimumSize(new Dimension(450, 478));
+        setMinimumSize(new Dimension(590, 478));
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 
@@ -39,10 +39,18 @@ public class Principal extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 InterfazProducto nuevaVentana = new InterfazProducto();
+                nuevaVentana.setLocationRelativeTo(null);
                 nuevaVentana.setVisible(true);
                 dispose();
             }
         });
-        setVisible(true);
+        bttAbrirVentanaProveedores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                InterfazProveedores abrirVentana = new InterfazProveedores();
+                abrirVentana.setLocationRelativeTo(null);
+                abrirVentana.setVisible(true);
+            }
+        });setVisible(true);
     }
 }

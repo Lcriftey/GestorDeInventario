@@ -9,21 +9,20 @@ import java.util.LinkedList;
 import LogicaProyecto.*;
 
 
-public class EditarProductos extends JDialog{
+public class EditarProductos extends JFrame{
     private JPanel panelEditarProductos;
     private JPanel panelTablaInventario;
     private JPanel panelBotones;
     private JButton bttGuardarCambiosYSalir;
     private JButton bttCancelarOperacion;
+    private JTextArea textArea1;
     private JTable tbltablaDeInventario;
     private DefaultTableModel modeloDeTabla;
 
-    public EditarProductos(InterfazProducto parentEditarProductos) {
-        super(parentEditarProductos);
+    public EditarProductos() {
         setTitle("Crear Productos");
         setContentPane(panelEditarProductos);
         setMinimumSize(new Dimension(600, 490));
-        setModal(true);
         setLocationRelativeTo(panelEditarProductos);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -49,6 +48,7 @@ public class EditarProductos extends JDialog{
                     bd.RegistrarProducto(producto);
                 }
                 InterfazProducto nuevaVentana = new InterfazProducto();
+                nuevaVentana.setLocationRelativeTo(null);
                 nuevaVentana.setVisible(true);
                 dispose();
             }
@@ -57,6 +57,7 @@ public class EditarProductos extends JDialog{
             @Override
             public void actionPerformed(ActionEvent e) {
                 InterfazProducto nuevaVentana = new InterfazProducto();
+                nuevaVentana.setLocationRelativeTo(null);
                 nuevaVentana.setVisible(true);
                 dispose();
             }

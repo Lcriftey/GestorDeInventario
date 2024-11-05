@@ -31,7 +31,7 @@ public class ProveedorRepositorio {
     // Retirar este método del código final
     public void imprimirLista() {
         for (int i = 0; i < listaDeProveedores.size(); i++) {
-            System.out.println(listaDeProveedores.get(i).getId() + " " + listaDeProveedores.get(i).getNombre());
+            System.out.println(listaDeProveedores.get(i).getIdProveedor() + " " + listaDeProveedores.get(i).getNombreProveedor());
         }
     }
 
@@ -44,7 +44,7 @@ public class ProveedorRepositorio {
     }
 
     public void compararId(LinkedList<Proveedor> nuevosDatos, String idAComparar) {
-        nuevosDatos.removeIf(proveedor -> proveedor.getId().equals(idAComparar));
+        nuevosDatos.removeIf(proveedor -> proveedor.getIdProveedor().equals(idAComparar));
     }
 }
 

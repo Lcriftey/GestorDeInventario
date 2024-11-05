@@ -35,14 +35,18 @@ public class InterfazProducto extends JFrame{
         bttAbrirEditarProductos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EditarProductos abrirVentana = new EditarProductos(InterfazProducto.this);
+                EditarProductos abrirVentana = new EditarProductos();
+                abrirVentana.setLocationRelativeTo(null);
+                abrirVentana.setVisible(true);
                 dispose();
             }
         });
         bttAbrirConsultarProductos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ConsultarProductos abrirVentana = new ConsultarProductos(InterfazProducto.this);
+                ConsultarProductos vn = new ConsultarProductos();
+                vn.setLocationRelativeTo(null);
+                vn.setVisible(true);
                 dispose();
             }
         });
@@ -50,7 +54,9 @@ public class InterfazProducto extends JFrame{
         bttAbrirBorrarProductos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                BorrarProducto abrirVentana = new BorrarProducto(InterfazProducto.this);
+                BorrarProducto vn = new BorrarProducto();
+                vn.setLocationRelativeTo(null);
+                vn.setVisible(true);
                 dispose();
             }
         });

@@ -215,7 +215,8 @@
           <component id="e5100" class="javax.swing.JLabel">
             <constraints border-constraint="Center"/>
             <properties>
-              <text value="Inventario"/>
+              <font name="Comic Sans MS" size="22" style="3"/>
+              <text value="Inventario:"/>
             </properties>
           </component>
         </children>

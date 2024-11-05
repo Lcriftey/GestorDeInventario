@@ -3,10 +3,10 @@ package LogicaProyecto;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class BDProveedor {
+public class BDProveedores {
     public LinkedList<Proveedor> obtenerProveedoresDelArchivo() {
         LinkedList<Proveedor> proveedores = new LinkedList<>();
-        Inventario inventario = new Inventario("proveedores.txt");
+        Inventario inventario = new Inventario("Lista De Proveedores.txt");
         LinkedList<String> lineas = inventario.ObtenerTextoDelArchivo();
 
         if (lineas != null) {
@@ -30,11 +30,11 @@ public class BDProveedor {
     }
 
     public boolean registrarProveedor(Proveedor proveedor) {
-        Inventario archivo = new Inventario("proveedores.txt");
-        return archivo.registrar(proveedor.getId() + ";"
-                + proveedor.getNombre() + ";"
-                + proveedor.getDireccion() + ";"
-                + proveedor.getTelefono());
+        ListadoDeProveedores archivo = new ListadoDeProveedores("Lista De Proveedores.txt");
+        return archivo.registrarProveedor(proveedor.getIdProveedor() + ";"
+                + proveedor.getNombreProveedor() + ";"
+                + proveedor.getDireccionProveedor() + ";"
+                + proveedor.getTelefonoProveedor());
     }
 }
 

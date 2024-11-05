@@ -47,4 +47,5 @@ public class ProductoRepositorio {
     public void compararId(LinkedList<Producto> nuevosdatos, String IdAComparar){
         nuevosdatos.removeIf(producto -> producto.getIdProducto().equals(IdAComparar));
     }
+
 }

@@ -6,8 +6,11 @@ public class Proveedor {
     private String direccionProveedor;
     private String telefonoProveedor;
 
-    public Proveedor() {
-
+    public Proveedor(String idProveedor, String nombreProveedor, String direccionProveedor, String telefonoProveedor) {
+        this.idProveedor = idProveedor;
+        this.nombreProveedor = nombreProveedor;
+        this.direccionProveedor = direccionProveedor;
+        this.telefonoProveedor = telefonoProveedor;
     }
 
     public String getIdProveedor() {

@@ -19,7 +19,7 @@ public class Login extends JFrame{
     public Login(){
         setTitle("LogicaProyecto.Login");
         setContentPane(panel1);
-        setMinimumSize(new Dimension(470, 478));
+        setMinimumSize(new Dimension(500, 500));
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         UsuarioRepositorio usuario = new UsuarioRepositorio();
         usuario.UsuarioPorDefecto("s", "s",5,"s","s","s","s",
