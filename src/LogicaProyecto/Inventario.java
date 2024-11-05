@@ -64,6 +64,7 @@ public class Inventario extends Component {
         return false;
     }
 
+    //Metodo que abre el archivo en su dirreccion (retirar si se logra hacer que los datos se editen en la tabla)
     public void openTextFile(String filePath) {
         try {
             File file = new File(filePath);
@@ -83,6 +84,21 @@ public class Inventario extends Component {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Error al abrir el archivo", "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    public boolean borrarContenido() {
+        File archivoInventario = obtenerArchivoDeInventario();
+        try {
+            if (archivoInventario.exists()) {
+                FileWriter fw = new FileWriter(archivoInventario, false); // Modo "false" sobreescribe el archivo
+                fw.write(""); // Escribe una cadena vacía para borrar el contenido
+                fw.close();
+                return true;
+            }
+        } catch (IOException error) {
+            error.printStackTrace();
+        }
+        return false;
     }
 }
 

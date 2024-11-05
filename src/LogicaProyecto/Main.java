@@ -1,15 +1,9 @@
 package LogicaProyecto;
-import GUI.CrearProductos;
-import GUI.EditarProductos;
-import GUI.Login;
-import GUI.PruebaTabla;
 
 public class Main {
     public static void main(String[] args) {
       //Login ventanaLogin = new Login(null);
 
-        EditarProductos tabla;
-        tabla = new EditarProductos(null);
     }
 }
     

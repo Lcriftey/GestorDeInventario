@@ -38,35 +38,8 @@ public class CrearProductos extends JDialog{
         setLocationRelativeTo(panelCrearProductos);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        ProductoRepositorio repositorio = new ProductoRepositorio();
-        repositorio.CargarProductoALaLista();  // Cargar productos en la lista desde el archivo
-        LinkedList<Producto> productos = repositorio.getListaDeProductos();
-
-        modeloDeTabla = new DefaultTableModel();
-        modeloDeTabla.addColumn("Id Producto");
-        modeloDeTabla.addColumn("Nombre del Producto");
-        modeloDeTabla.addColumn("Categoría Del Producto");
-        modeloDeTabla.addColumn("Stock");
-        modeloDeTabla.addColumn("Precio del Producto");
-        modeloDeTabla.addColumn("Fecha de Expiracion");
-        modeloDeTabla.addColumn("Proveedor");
-
-        for (Producto producto : productos) {
-            Object[] fila = {
-                    producto.getIdProducto(),
-                    producto.getNombreProducto(),
-                    producto.getCategoriaProducto(),
-                    producto.getCantidadProducto(),
-                    producto.getPrecioProducto(),
-                    producto.getExpiracionProducto(),
-                    producto.getNombreProveedor()
-            };
-            modeloDeTabla.addRow(fila);
-        }
-        tbltablaDeInventario = new JTable(modeloDeTabla);
-        JScrollPane scrollPane = new JScrollPane(tbltablaDeInventario);
-        JPanelInventario.add(scrollPane, BorderLayout.CENTER);
-        //add(scrollPane);
+        //Se obtienen los datos del archivo y se suben a la tabla de inventario
+        CrearTabla();
 
         bttGuardarProducto.addActionListener(new ActionListener() {
             @Override
@@ -151,6 +124,37 @@ public class CrearProductos extends JDialog{
         // Refresca la tabla
         tbltablaDeInventario.revalidate();
         tbltablaDeInventario.repaint();
+    }
+
+    public void CrearTabla(){
+        ProductoRepositorio repositorio = new ProductoRepositorio();
+        repositorio.CargarProductoALaLista();  // Cargar productos en la lista desde el archivo
+        LinkedList<Producto> productos = repositorio.getListaDeProductos();
+
+        modeloDeTabla = new DefaultTableModel();
+        modeloDeTabla.addColumn("Id Producto");
+        modeloDeTabla.addColumn("Nombre del Producto");
+        modeloDeTabla.addColumn("Categoría Del Producto");
+        modeloDeTabla.addColumn("Stock");
+        modeloDeTabla.addColumn("Precio del Producto");
+        modeloDeTabla.addColumn("Fecha de Expiracion");
+        modeloDeTabla.addColumn("Proveedor");
+
+        for (Producto producto : productos) {
+            Object[] fila = {
+                    producto.getIdProducto(),
+                    producto.getNombreProducto(),
+                    producto.getCategoriaProducto(),
+                    producto.getCantidadProducto(),
+                    producto.getPrecioProducto(),
+                    producto.getExpiracionProducto(),
+                    producto.getNombreProveedor()
+            };
+            modeloDeTabla.addRow(fila);
+        }
+        tbltablaDeInventario = new JTable(modeloDeTabla);
+        JScrollPane scrollPane = new JScrollPane(tbltablaDeInventario);
+        JPanelInventario.add(scrollPane, BorderLayout.CENTER);
     }
 
     public static void main (String [] args){
