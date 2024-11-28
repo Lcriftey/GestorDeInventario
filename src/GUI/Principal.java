@@ -1,5 +1,8 @@
 package GUI;
 
+import LogicaProyecto.Usuario;
+import LogicaProyecto.UsuarioServicio;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,13 +14,18 @@ public class Principal extends JFrame{
     private JButton btCerrarSesion;
     private JButton btProductos;
     private JButton bttAbrirVentanaProveedores;
+    private JButton bttRegistrarMovimientos;
+
+    Usuario usuarioActual =  UsuarioServicio.obtenerUsuarioActual();
+    String bienvenidaUsuario = usuarioActual.getNombreUsuario();
+
 
     public Principal() {
         setTitle("Ventana Principal");
         setContentPane(panel1);
         setMinimumSize(new Dimension(590, 478));
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
+        lbBienvenida.setText("Bienvenido " + bienvenidaUsuario);
 
         btCerrarSesion.addActionListener(new ActionListener() {
             @Override
@@ -52,6 +60,16 @@ public class Principal extends JFrame{
                 abrirVentana.setVisible(true);
                 dispose();
             }
+        });
+        bttRegistrarMovimientos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RegistrarMovimientos abrirVentana = new RegistrarMovimientos();
+                abrirVentana.setLocationRelativeTo(null);
+                abrirVentana.setVisible(true);
+                dispose();
+            }
         });setVisible(true);
     }
+
 }

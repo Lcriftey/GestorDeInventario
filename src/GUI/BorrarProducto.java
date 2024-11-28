@@ -1,9 +1,6 @@
 package GUI;
 
-import LogicaProyecto.BDProductos;
-import LogicaProyecto.Inventario;
-import LogicaProyecto.Producto;
-import LogicaProyecto.ProductoRepositorio;
+import LogicaProyecto.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -89,7 +86,7 @@ public class BorrarProducto extends JFrame{
                     producto.getCantidadProducto(),
                     producto.getPrecioProducto(),
                     producto.getExpiracionProducto(),
-                    producto.getNombreProveedor()
+                    producto.getProveedorProducto().getNombreProveedor()
             };
             modeloDeTabla.addRow(fila);
         }
@@ -112,7 +109,10 @@ public class BorrarProducto extends JFrame{
             int cantidadProducto = Integer.parseInt(modeloDeTabla.getValueAt(row, 3).toString());
             float precioProducto = Float.parseFloat(modeloDeTabla.getValueAt(row, 4).toString());
             String expiracionProducto = (String) modeloDeTabla.getValueAt(row, 5);
-            String proveedorProducto = (String) modeloDeTabla.getValueAt(row, 6);
+            String proveedorNombre = (String) modeloDeTabla.getValueAt(row, 6);
+
+            Proveedor proveedorProducto = new Proveedor(proveedorNombre, "", "",
+                                                "");
 
             Producto productoActualizado = new Producto(idProducto, nombreProducto, categoriaProducto,
                     cantidadProducto, precioProducto, expiracionProducto, proveedorProducto);
@@ -139,7 +139,7 @@ public class BorrarProducto extends JFrame{
                     producto.getCantidadProducto(),
                     producto.getPrecioProducto(),
                     producto.getExpiracionProducto(),
-                    producto.getNombreProveedor()
+                    producto.getProveedorProducto().getNombreProveedor()
             };
             modeloDeTabla.addRow(fila);
         }
@@ -148,4 +148,5 @@ public class BorrarProducto extends JFrame{
         tbltablaDeInventario.revalidate();
         tbltablaDeInventario.repaint();
     }
+
 }

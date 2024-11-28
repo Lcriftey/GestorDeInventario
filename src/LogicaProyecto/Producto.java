@@ -7,17 +7,17 @@ public class Producto {
     private int cantidadProducto;
     private float precioProducto;
     private String expiracionProducto;
-    private String nombreProveedor;
+    private Proveedor proveedorDeProducto;
 
     public Producto(String id, String nombre, String categoría, int cantidad, float precio,
-                    String fechaExpiracion, String Proveedor){
+                    String fechaExpiracion, Proveedor Proveedor){
         idProducto = id;
         nombreProducto = nombre;
         categoriaProducto = categoría;
         cantidadProducto = cantidad;
         precioProducto = precio;
         expiracionProducto = fechaExpiracion;
-        nombreProveedor = Proveedor;
+        proveedorDeProducto = Proveedor;
     }
 
     public String getIdProducto() {
@@ -68,11 +68,11 @@ public class Producto {
         this.expiracionProducto = expiracionProducto;
     }
 
-    public String getNombreProveedor() {
-        return nombreProveedor;
+    public Proveedor getProveedorProducto() {
+        return proveedorDeProducto;
     }
 
-    public void setNombreProveedor(String nombreProveedor) {
-        this.nombreProveedor = nombreProveedor;
+    public void setNombreProveedor(Proveedor nombreProveedor) {
+        this.proveedorDeProducto = nombreProveedor;
     }
 }

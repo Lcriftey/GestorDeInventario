@@ -16,7 +16,7 @@ public class UsuarioRepositorio {
 
 
     public void CrearUsuario(String nombre, String apellido, int edad, String tipoNif, String numeroNif,
-                             String correo, String direccion, String telefono, String contrasena) {
+                             String correo, String direccion, String telefono, String contrasena, boolean rolUsuario) {
         boolean nifAsignado = false;  // Variable para saber si el NIF fue asignado correctamente
 
         for (int indiceUsuarios = 0; indiceUsuarios < listaUsuarios.length; indiceUsuarios++) {
@@ -29,7 +29,7 @@ public class UsuarioRepositorio {
 
             if (listaUsuarios[indiceUsuarios] == null) {
                 listaUsuarios[indiceUsuarios] = new Usuario(nombre, apellido, edad, tipoNif, numeroNif, correo,
-                        direccion, telefono, contrasena, true);
+                        direccion, telefono, contrasena, rolUsuario);
                 imprimir.println("Usuario creado con éxito en la posición " + indiceUsuarios + ".");
                 nifAsignado = true;  // Indicamos que el NIF fue asignado
                 break;  // Salimos del ciclo, ya que el usuario fue asignado

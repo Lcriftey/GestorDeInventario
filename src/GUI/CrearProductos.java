@@ -1,9 +1,6 @@
 package GUI;
 
-import LogicaProyecto.BDProductos;
-import LogicaProyecto.Inventario;
-import LogicaProyecto.Producto;
-import LogicaProyecto.ProductoRepositorio;
+import LogicaProyecto.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -88,8 +85,10 @@ public class CrearProductos extends JFrame{
         String expiracion = txtFechaExpiracionProducto.getText();
         String proveedor = txtProveedorProducto.getText();
 
+        Proveedor proveedorDeProducto = new Proveedor(proveedor, " ",
+                " ", " ");
 
-        return new Producto(id, nombre, categoria, cantidad, precio, expiracion, proveedor);
+        return new Producto(id, nombre, categoria, cantidad, precio, expiracion, proveedorDeProducto);
     }
 
     public void recargarDatosDeTabla() {
@@ -110,7 +109,7 @@ public class CrearProductos extends JFrame{
                     producto.getCantidadProducto(),
                     producto.getPrecioProducto(),
                     producto.getExpiracionProducto(),
-                    producto.getNombreProveedor()
+                    producto.getProveedorProducto().getNombreProveedor()
             };
             modeloDeTabla.addRow(fila);
         }
@@ -142,7 +141,7 @@ public class CrearProductos extends JFrame{
                     producto.getCantidadProducto(),
                     producto.getPrecioProducto(),
                     producto.getExpiracionProducto(),
-                    producto.getNombreProveedor()
+                    producto.getProveedorProducto().getNombreProveedor()
             };
             modeloDeTabla.addRow(fila);
         }
@@ -151,9 +150,5 @@ public class CrearProductos extends JFrame{
         JPanelInventario.add(scrollPane, BorderLayout.CENTER);
     }
 
-    public static void main (String [] args){
-        CrearProductos tabla;
-        tabla = new CrearProductos(null);
-    }
 }
 

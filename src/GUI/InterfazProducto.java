@@ -1,5 +1,9 @@
 package GUI;
 
+import LogicaProyecto.Usuario;
+import LogicaProyecto.UsuarioRepositorio;
+import LogicaProyecto.UsuarioServicio;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,7 +24,7 @@ public class InterfazProducto extends JFrame{
 
         setTitle("Producto");
         setContentPane(PanelBotones);
-        setMinimumSize(new Dimension(800, 690));
+        setMinimumSize(new Dimension(500, 500));
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 
@@ -35,10 +39,22 @@ public class InterfazProducto extends JFrame{
         bttAbrirEditarProductos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EditarProductos abrirVentana = new EditarProductos();
-                abrirVentana.setLocationRelativeTo(null);
-                abrirVentana.setVisible(true);
-                dispose();
+                //Comprobacion rol del usuario
+                UsuarioServicio usuarioServicio = new UsuarioServicio();
+                Usuario usuarioActual =  UsuarioServicio.obtenerUsuarioActual();
+                boolean rolUsuario = usuarioActual.isEstadoUsuario();
+
+                if(rolUsuario) {
+                    EditarProductos abrirVentana = new EditarProductos();
+                    abrirVentana.setLocationRelativeTo(null);
+                    abrirVentana.setVisible(true);
+                    dispose();
+                } else {
+                    JOptionPane.showMessageDialog(InterfazProducto.this,
+                            "Rol no valido para efectuar esta acción. \n",
+                            "Advertencia",
+                            JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
         bttAbrirConsultarProductos.addActionListener(new ActionListener() {
@@ -54,10 +70,23 @@ public class InterfazProducto extends JFrame{
         bttAbrirBorrarProductos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                BorrarProducto vn = new BorrarProducto();
-                vn.setLocationRelativeTo(null);
-                vn.setVisible(true);
-                dispose();
+                //Comprobacion rol del usuario
+                UsuarioServicio usuarioServicio = new UsuarioServicio();
+                Usuario usuarioActual =  UsuarioServicio.obtenerUsuarioActual();
+                boolean rolUsuario = usuarioActual.isEstadoUsuario();
+
+                if(rolUsuario) {
+                    BorrarProducto vn = new BorrarProducto();
+                    vn.setLocationRelativeTo(null);
+                    vn.setVisible(true);
+                    dispose();
+                }
+                else {
+                    JOptionPane.showMessageDialog(InterfazProducto.this,
+                            "Rol no valido para efectuar esta acción. \n",
+                            "Advertencia",
+                            JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
         bttvolverVentanaPrincipal.addActionListener(new ActionListener() {

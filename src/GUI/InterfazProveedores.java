@@ -1,6 +1,8 @@
 package GUI;
 
 import LogicaProyecto.BDProveedores;
+import LogicaProyecto.Usuario;
+import LogicaProyecto.UsuarioServicio;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +21,7 @@ public class InterfazProveedores extends JFrame{
     public InterfazProveedores(){
         setTitle("Ventana Proveedores");
         setContentPane(panel1);
-        setMinimumSize(new Dimension(450, 478));
+        setMinimumSize(new Dimension(500, 500));
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 
@@ -35,10 +37,22 @@ public class InterfazProveedores extends JFrame{
         bttEditar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EditarProveedores nv = new EditarProveedores();
-                nv.setLocationRelativeTo(null);
-                nv.setVisible(true);
-                dispose();
+                //Comprobacion rol del usuario
+                UsuarioServicio usuarioServicio = new UsuarioServicio();
+                Usuario usuarioActual =  UsuarioServicio.obtenerUsuarioActual();
+                boolean rolUsuario = usuarioActual.isEstadoUsuario();
+
+                if(rolUsuario) {
+                    EditarProveedores nv = new EditarProveedores();
+                    nv.setLocationRelativeTo(null);
+                    nv.setVisible(true);
+                    dispose();
+                } else {
+                    JOptionPane.showMessageDialog(InterfazProveedores.this,
+                            "Rol no valido para efectuar esta acción. \n",
+                            "Advertencia",
+                            JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
         bttConsultar.addActionListener(new ActionListener() {
@@ -53,10 +67,22 @@ public class InterfazProveedores extends JFrame{
         bttBorrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                BorrarProveedores vn = new BorrarProveedores();
-                vn.setLocationRelativeTo(null);
-                vn.setVisible(true);
-                dispose();
+                //Comprobacion rol del usuario
+                UsuarioServicio usuarioServicio = new UsuarioServicio();
+                Usuario usuarioActual =  UsuarioServicio.obtenerUsuarioActual();
+                boolean rolUsuario = usuarioActual.isEstadoUsuario();
+
+                if(rolUsuario) {
+                    BorrarProveedores vn = new BorrarProveedores();
+                    vn.setLocationRelativeTo(null);
+                    vn.setVisible(true);
+                    dispose();
+                } else {
+                    JOptionPane.showMessageDialog(InterfazProveedores.this,
+                            "Rol no valido para efectuar esta acción. \n",
+                            "Advertencia",
+                            JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
         bttVolver.addActionListener(new ActionListener() {

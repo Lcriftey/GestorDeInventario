@@ -23,7 +23,9 @@ public class BDProductos {
                     String expiracion = tokens.nextToken();
                     String proveedor = tokens.nextToken();
 
-                    productos.add(new Producto(codigo, nombre, categoria, existencias, precio, expiracion, proveedor));
+                    Proveedor proveedorDeProducto = new Proveedor(proveedor, " ", " ", " ");
+
+                    productos.add(new Producto(codigo, nombre, categoria, existencias, precio, expiracion, proveedorDeProducto));
                 } else {
                     System.out.println("Línea con formato incorrecto: " + linea);
                 }
@@ -40,6 +42,36 @@ public class BDProductos {
                 + producto.getCantidadProducto() + ";"
                 + producto.getPrecioProducto() + ";"
                 + producto.getExpiracionProducto() + ";"
-                + producto.getNombreProveedor());
+                + producto.getProveedorProducto().getNombreProveedor());
     }
+
+    public boolean GuardarListaDeProductos(LinkedList<Producto> listaProductos) {
+        Inventario inventario = new Inventario("inventario.txt");
+
+        // Borrar el contenido actual del archivo
+        boolean borradoExitoso = inventario.borrarContenido();
+        if (!borradoExitoso) {
+            System.out.println("No se pudo borrar el contenido del archivo.");
+            return false;
+        }
+
+        // Registrar cada producto de la lista en el archivo
+        for (Producto producto : listaProductos) {
+            boolean registrado = inventario.registrar(producto.getIdProducto() + ";"
+                    + producto.getNombreProducto() + ";"
+                    + producto.getCategoriaProducto() + ";"
+                    + producto.getCantidadProducto() + ";"
+                    + producto.getPrecioProducto() + ";"
+                    + producto.getExpiracionProducto() + ";"
+                    + producto.getProveedorProducto().getNombreProveedor());
+
+            if (!registrado) {
+                System.out.println("Error al registrar el producto: " + producto.getIdProducto());
+                return false; // Si falla un registro, detener el proceso y devolver `false`.
+            }
+        }
+
+        return true; // Indicar que todos los productos fueron registrados con éxito.
+    }
+
 }

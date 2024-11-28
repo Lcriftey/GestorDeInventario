@@ -78,6 +78,30 @@ public class Inventario extends Component {
         }
         return false;
     }
+
+    public void AbrirArchivo(){
+        try {
+            // Obtén la ruta del archivo en tu proyecto (en la carpeta Archivos, por ejemplo)
+            File archivo = new File("C:\\Users\\juanc\\Documents\\Parcial-ProgramacionlV\\GestionInventario\\out\\production\\GestionInventario\\Archivos\\inventario.txt");
+
+            // Verifica si Desktop es soportado
+            if (Desktop.isDesktopSupported()) {
+                Desktop desktop = Desktop.getDesktop();
+
+                // Verifica si se puede abrir archivos
+                if (archivo.exists() && desktop.isSupported(Desktop.Action.OPEN)) {
+                    desktop.open(archivo); // Abre el archivo
+                } else {
+                    JOptionPane.showMessageDialog(null, "El archivo no existe o no se puede abrir en este sistema.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "La función de apertura no es soportada en este sistema.");
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Hubo un error al intentar abrir el archivo.");
+        }
+    }
 }
 
 

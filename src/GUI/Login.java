@@ -40,7 +40,12 @@ public class Login extends JFrame{
                 boolean seEncuentraRegistrado = true;
 
                 UsuarioServicio usuarioServicio = new UsuarioServicio();
+                UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
                 seEncuentraRegistrado = usuarioServicio.validarUsuario(correoSuministrado, contraseñaSuministrada);
+
+                Usuario usuarioAutenticado = usuarioRepositorio.ObtenerCorreoUsuario(correoSuministrado); //
+                UsuarioServicio.setUsuarioActual(usuarioAutenticado);
+
                 if(seEncuentraRegistrado){
                     Principal nuevaVentana = new Principal();
                     nuevaVentana.setLocationRelativeTo(null);

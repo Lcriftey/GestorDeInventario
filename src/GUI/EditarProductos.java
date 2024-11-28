@@ -87,7 +87,7 @@ public class EditarProductos extends JFrame{
                     producto.getCantidadProducto(),
                     producto.getPrecioProducto(),
                     producto.getExpiracionProducto(),
-                    producto.getNombreProveedor()
+                    producto.getProveedorProducto().getNombreProveedor()
             };
             modeloDeTabla.addRow(fila);
         }
@@ -108,11 +108,15 @@ public class EditarProductos extends JFrame{
             int cantidadProducto = Integer.parseInt(modeloDeTabla.getValueAt(row, 3).toString());
             float precioProducto = Float.parseFloat(modeloDeTabla.getValueAt(row, 4).toString());
             String expiracionProducto = (String) modeloDeTabla.getValueAt(row, 5);
-            String proveedorProducto = (String) modeloDeTabla.getValueAt(row, 6);
+            String nombreProveedor = (String) modeloDeTabla.getValueAt(row, 6);
+
+
+            Proveedor proveedorDeProducto = new Proveedor(nombreProveedor, " ",
+                    " ", " ");
 
             // Crear un nuevo objeto Producto con los datos de la fila
             Producto productoActualizado = new Producto(idProducto, nombreProducto, categoriaProducto,
-                    cantidadProducto, precioProducto, expiracionProducto, proveedorProducto);
+                    cantidadProducto, precioProducto, expiracionProducto, proveedorDeProducto);
 
             nuevosDatos.add(productoActualizado);
         }

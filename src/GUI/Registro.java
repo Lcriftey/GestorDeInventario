@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
+
 import LogicaProyecto.*;
 
 public class Registro extends JDialog{
@@ -29,12 +31,13 @@ public class Registro extends JDialog{
     private JFormattedTextField tfRegistrarNif;
     private JFormattedTextField tfRegistrarDireccion;
     private JFormattedTextField tfRegistrarTelefono;
+    private JComboBox cmbRolUsuario;
 
     public Registro(Login parentRegistro){
         super(parentRegistro);
         setTitle("Registro");
         setContentPane(panelRegistro);
-        setMinimumSize(new Dimension(512, 470));
+        setMinimumSize(new Dimension(600, 600));
         setModal(true);
         setLocationRelativeTo(parentRegistro);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -51,11 +54,17 @@ public class Registro extends JDialog{
                 String direccion = tfRegistrarDireccion.getText();
                 String telefono = tfRegistrarTelefono.getText();
                 String contrasena = new String(pfContraseñaUsuarioRegistrar.getPassword());
+                String rolUsuario = (String) cmbRolUsuario.getSelectedItem();
+                boolean esAdministrador = true;
+
+                if("Auxiliar".equals(rolUsuario)){
+                    esAdministrador = false;
+                }
 
                 // Crear un repositorio de usuarios y pasar los datos al método
                 UsuarioRepositorio registrarUsuarios = new UsuarioRepositorio();
                 registrarUsuarios.CrearUsuario(nombre, apellido, edad, tipoNif, numeroNif, correo,
-                        direccion, telefono, contrasena);
+                        direccion, telefono, contrasena, esAdministrador);
 
                 JOptionPane.showMessageDialog(Registro.this,
                         "Usuario registrado exitosamente.",

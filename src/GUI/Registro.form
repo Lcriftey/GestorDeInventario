@@ -3,14 +3,14 @@
   <grid id="27dc6" binding="panelRegistro" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="47" y="39" width="520" height="526"/>
+      <xy x="47" y="39" width="557" height="571"/>
     </constraints>
     <properties>
       <foreground color="-13553298"/>
     </properties>
     <border type="none"/>
     <children>
-      <grid id="c07f8" binding="PanelRegistro" layout-manager="GridLayoutManager" row-count="11" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="c07f8" binding="PanelRegistro" layout-manager="GridLayoutManager" row-count="12" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="20" left="20" bottom="20" right="20"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -26,7 +26,7 @@
               <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Comic Sans MS" size="12" style="0"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
               <foreground color="-15724528"/>
               <text value="Contraseña"/>
             </properties>
@@ -39,8 +39,8 @@
             </constraints>
             <properties>
               <background color="-1841689"/>
-              <font name="Comic Sans MS" size="12" style="0"/>
-              <foreground color="-1841689"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <foreground color="-15724528"/>
             </properties>
           </component>
           <component id="f501d" class="javax.swing.JLabel" binding="lbCorreoUsuarioRegistrar">
@@ -48,7 +48,7 @@
               <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Comic Sans MS" size="12" style="0"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
               <foreground color="-15724528"/>
               <text value="Correo:"/>
             </properties>
@@ -61,16 +61,16 @@
             </constraints>
             <properties>
               <background color="-1841689"/>
-              <font name="Comic Sans MS" size="12" style="0"/>
-              <foreground color="-1841689"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <foreground color="-15724528"/>
             </properties>
           </component>
           <component id="d8524" class="javax.swing.JButton" binding="btRegistrarUsuario">
             <constraints>
-              <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Comic Sans MS" size="12" style="0"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
               <text value="Registrarse"/>
             </properties>
           </component>
@@ -82,8 +82,8 @@
             </constraints>
             <properties>
               <background color="-1841689"/>
-              <font name="Comic Sans MS" size="12" style="0"/>
-              <foreground color="-1841689"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <foreground color="-15724528"/>
             </properties>
           </component>
           <component id="b9985" class="javax.swing.JLabel" binding="lbRegistrarTelefono">
@@ -91,7 +91,7 @@
               <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Comic Sans MS" size="12" style="0"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
               <foreground color="-15724528"/>
               <text value="Telefono:"/>
             </properties>
@@ -104,8 +104,8 @@
             </constraints>
             <properties>
               <background color="-1841689"/>
-              <font name="Comic Sans MS" size="12" style="0"/>
-              <foreground color="-1841689"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <foreground color="-15724528"/>
             </properties>
           </component>
           <component id="45be9" class="javax.swing.JLabel" binding="lbRegistrarDireccion">
@@ -113,7 +113,7 @@
               <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Comic Sans MS" size="12" style="0"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
               <foreground color="-15724528"/>
               <text value="Direccion:"/>
             </properties>
@@ -126,8 +126,8 @@
             </constraints>
             <properties>
               <background color="-1841689"/>
-              <font name="Comic Sans MS" size="12" style="0"/>
-              <foreground color="-1841689"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <foreground color="-15724528"/>
             </properties>
           </component>
           <component id="a82e6" class="javax.swing.JLabel" binding="lbRegistrarNIf">
@@ -135,7 +135,7 @@
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Comic Sans MS" size="12" style="0"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
               <foreground color="-15724528"/>
               <text value="Numero de NIF:"/>
             </properties>
@@ -148,8 +148,8 @@
             </constraints>
             <properties>
               <background color="-1841689"/>
-              <font name="Comic Sans MS" size="12" style="0"/>
-              <foreground color="-1841689"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <foreground color="-15724528"/>
             </properties>
           </component>
           <component id="1f220" class="javax.swing.JLabel" binding="lbRegistrarTipoNIf">
@@ -157,7 +157,7 @@
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Comic Sans MS" size="12" style="0"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
               <foreground color="-15724528"/>
               <text value="Tipo De NIf:"/>
             </properties>
@@ -170,8 +170,8 @@
             </constraints>
             <properties>
               <background color="-1841689"/>
-              <font name="Comic Sans MS" size="12" style="0"/>
-              <foreground color="-1841689"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <foreground color="-15724528"/>
             </properties>
           </component>
           <component id="d0fc3" class="javax.swing.JLabel" binding="lbRegistraredad">
@@ -179,7 +179,7 @@
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Comic Sans MS" size="12" style="0"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
               <foreground color="-15724528"/>
               <text value="Edad:"/>
             </properties>
@@ -192,8 +192,8 @@
             </constraints>
             <properties>
               <background color="-1841689"/>
-              <font name="Comic Sans MS" size="12" style="0"/>
-              <foreground color="-1841689"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <foreground color="-15724528"/>
             </properties>
           </component>
           <component id="78954" class="javax.swing.JLabel" binding="lbRegistrarApellido">
@@ -201,7 +201,7 @@
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Comic Sans MS" size="12" style="0"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
               <foreground color="-15724528"/>
               <text value="Apellidos:"/>
             </properties>
@@ -214,8 +214,8 @@
             </constraints>
             <properties>
               <background color="-1841689"/>
-              <font name="Comic Sans MS" size="12" style="0"/>
-              <foreground color="-1841689"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <foreground color="-15724528"/>
             </properties>
           </component>
           <component id="607dc" class="javax.swing.JLabel" binding="lbRegistrarNombre">
@@ -223,7 +223,7 @@
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Comic Sans MS" size="12" style="0"/>
+              <font name="Comic Sans MS" size="14" style="3"/>
               <foreground color="-15724528"/>
               <text value="Nombres"/>
             </properties>
@@ -237,6 +237,29 @@
               <foreground color="-1446418"/>
               <icon value="Imagees/add.png"/>
               <text value="Registrese"/>
+            </properties>
+          </component>
+          <component id="f0a30" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <foreground color="-15724528"/>
+              <text value="Rol:"/>
+            </properties>
+          </component>
+          <component id="89f0a" class="javax.swing.JComboBox" binding="cmbRolUsuario">
+            <constraints>
+              <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="14" style="3"/>
+              <model>
+                <item value=""/>
+                <item value="Administrador"/>
+                <item value="Auxiliar"/>
+              </model>
             </properties>
           </component>
         </children>
